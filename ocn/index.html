@@ -8,7 +8,7 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1><img width=80 height=80 src="http://cdn.oc.tc/projectares/logo.png"/>&nbsp;Overcast Network</h1>
+        <h1><img width=80 height=80 src="logo.png"/>&nbsp;Overcast Network</h1>
         <p>Overcast Network is a network of <a href="https://minecraft.net" target="_blank">Minecraft</a> multiplayer servers providing fast-paced player versus player gameplay.</p>
       </div>
       <h2><a href="https://oc.tc">Official Website</a></h2>
@@ -45,7 +45,7 @@
       <h2>Server Technology</h2>
         <p>The Overcast Network currently rents 14 dedicated servers around the world. United States servers are hosted on 8 machines in Phoenix, AZ. Europe servers are hosted on 3 machines in Amsterdam, NL. Tournament servers are hosted on 3 machines in Chicago, IL. One of the most significant challenges is managing and monitoring all the services we run.</p>
         <h3>Load Balancing</h3>
-        <p>The Overcast Network is designed to support an incredibly large number of concurrent players. We utilize the <a href="http://www.spigotmc.org/threads/1-7-2-bungeecord.392/" target="_blank">BungeeCore</a> load balancer to allow players to switch between Minecraft server instances without having to disconnect. This allows for seamless playing and other features are included to allow for players to easily play with their friends.</p>
+        <p>The Overcast Network is designed to support an incredibly large number of concurrent players. We utilize the <a href="http://www.spigotmc.org/threads/1-7-2-bungeecord.392/" target="_blank">BungeeCord</a> load balancer to allow players to switch between Minecraft server instances without having to disconnect. This allows for seamless playing and other features are included to allow for players to easily play with their friends.</p>
         <h3>Server Configuration</h3>
         <p>All machines are managed by <a href="http://puppetlabs.com/" target="_blank">Puppet configuration management</a>. Puppet takes care of ensuring the correct software is installed on all the servers are is running and configured properly. It also takes care of managing security and ensuring our servers are protected from external attacks.</p>
         <p>Minecraft servers are also managed by Puppet but in a slightly different way. We have code which reads data from the database for every Minecraft instance we run and uses that data to configure it properly. Every instance automatically restarts many times a day and is updated to the latest software at the same time.</p>
