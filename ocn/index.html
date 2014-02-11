@@ -1,5 +1,66 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Overcast Network Overview</title>
+    <!-- Bootstrap -->
+    <link href="http://netdna.bootstrapcdn.com/bootswatch/3.0.3/cosmo/bootstrap.min.css" rel="stylesheet"/>
+  </head>
   <body>
-    <h1>Hello, world!</h1>
+    <div class="container">
+      <div class="jumbotron">
+        <h1><img width=80 height=80 src="http://cdn.oc.tc/projectares/logo.png"/>&nbsp;Overcast Network</h1>
+        <p>Overcast Network is a network of <a href="https://minecraft.net" target="_blank">Minecraft</a> multiplayer servers providing fast-paced player versus player gameplay.</p>
+      </div>
+      <h2><a href="https://oc.tc">Official Website</a></h2>
+      <h2>Gameplay</h2>
+        <p>Overcast Network features match-based gameplay. Players are divided into two or more teams and tasked to complete a certain objective. Watch the video below for a brief trailer on what game play usually looks like. Note that Overcast is comprised of software that runs behind the scenes on our servers. All visuals are property of Mojang, the company behind Minecraft.</p>
+        <iframe width="560" height="315" src="http://www.youtube.com/embed/6Bwei8adYVE" frameborder="0" allowfullscreen></iframe>
+        <p>Video created by community member <a href="https://oc.tc/FunnyQuinn" target="_blank">FunnyQuinn</a>.</p>
+        <p>Each match features a custom terrain built by players from all over the world. Players can use whatever resources that are available to them in order to achieve their objective. The primary objectives are as follows:</p>
+        <h4>Destroy the Core</h4>
+        <p>Players must storm to the enemy team's side and leak lava from a heavily fortified core.</p>
+        <h4>Capture the Wool</h4>
+        <p>Colored wool blocks are placed before the match in specific rooms. Players must infultrate these rooms to gather the blocks then return to their side to place them in the monument and win.</p>
+        <h4>Break the Monument</h4>
+        <p>Players must destroy certain objects placed throughout the maps. Sometimes they can be damaged easily and sometimes they are much more difficult to mine. Defenders try to stop the attackers in their tracks to ensure their monument stays intact.</p>
+        <h4>Team Death Match</h4>
+        <p>Two teams duel it out in a player versus player match. The winning team is the one with the most amount of points at the end. Teams may gain points by killing enemy team members or scoring in preplaced goals.</p>
+        <h4>Capture the Hill</h4>
+        <p>Many hills are placed throughout the map. Controlled these hills gives a team points every second. The first team to the predetermined point limit is the winner.</p>
+      <h2>Plugin Technology</h2>
+        <p>Most of the Overcast Network custom software is written as a server-side modifications to the Minecraft server software. We use the open source project <a href="https://bukkit.org/" target="_blank">Bukkit</a> to dynamically load our modifications. Being server side means that players can connect to our server and immediately experience a different style of multiplayer gameplay.</p>
+        <p>There are a few core plugins that provide most of the experience:</p>
+        <h3>PGM (closed source)</h3>
+        <p>PGM stands for "Player versus player Game Manager" and is the core software that loads the maps, runs the game, and enforces the rules. The plugin reads maps (composed of the Minecraft world files plus an XML description document) and determines what rules need to be enforced. Players are automatically allowed to spectate a game when they join and may choose to join one of the participating teams.</p>
+        <h3>Project Ares (closed source)</h3>
+        <p>Project Ares is our plugin which manages the interaction between our Minecraft servers and the backend database. The database stores all sorts of information including game statistics, bans, website information, and many other miscellaneous pieces of information. This plugin watches what is happening on the server and saves appropriate data to the database.</p>
+        <h3>Supporting Plugins</h3>
+        <p>There are many more plugins that we use to provide other, smaller features. Here is a short list of our open source ones (more can be found on our <a href="https://github.com/OvercastNetwork" target="_blank">Github page</a>):</p>
+        <h4><a href="https://github.com/OvercastNetwork/SportBukkit" target="_blank">SportBukkit</a></h4>
+        <p>Custom modifications to the Bukkit software that enables extra features.</p>
+        <h4><a href="https://github.com/OvercastNetwork/BukkitSettings" target="_blank">BukkitSettings</a></h4>
+        <p>Framework that enables players to customize their experience through in game settings.</p>
+        <h4><a href="https://github.com/OvercastNetwork/Tracker" target="_blank">Tracker</a></h4>
+        <p>Plugin that provides advance tracking of player damage and gives appropriate credit to players who score a kill.</p>
+      <h2>Server Technology</h2>
+        <p>The Overcast Network currently rents 14 dedicated servers around the world. United States servers are hosted on 8 machines in Phoenix, AZ. Europe servers are hosted on 3 machines in Amsterdam, NL. Tournament servers are hosted on 3 machines in Chicago, IL. One of the most significant challenges is managing and monitoring all the services we run.</p>
+        <h3>Load Balancing</h3>
+        <p>The Overcast Network is designed to support an incredibly large number of concurrent players. We utilize the <a href="http://www.spigotmc.org/threads/1-7-2-bungeecord.392/" target="_blank">BungeeCore</a> load balancer to allow players to switch between Minecraft server instances without having to disconnect. This allows for seamless playing and other features are included to allow for players to easily play with their friends.</p>
+        <h3>Server Configuration</h3>
+        <p>All machines are managed by <a href="http://puppetlabs.com/" target="_blank">Puppet configuration management</a>. Puppet takes care of ensuring the correct software is installed on all the servers are is running and configured properly. It also takes care of managing security and ensuring our servers are protected from external attacks.</p>
+        <p>Minecraft servers are also managed by Puppet but in a slightly different way. We have code which reads data from the database for every Minecraft instance we run and uses that data to configure it properly. Every instance automatically restarts many times a day and is updated to the latest software at the same time.</p>
+        <h3>Server Monitoring</h3>
+        <p><img src="network-utilization.PNG" style="float: right;" height="35%" width="35%">All servers are monitored using server monitoring software to show in real time statistics including CPU load, memory usage, disk usage, and network utilization. We actively check this monitoring to ensure the servers are running at peak performance 24/7/365. Services are balanced between server machines to prevent a single machine from getting overloaded and causing a reduced experience for our players.</p>
+      <h2>Statistics</h2>
+        <p>Almost <b>1 million</b> unique players</p>
+        <p>Average of <b>100 thousand</b> unique players per week</p>
+      <h2>Further Browsing</h2>
+      <p>Here are two more trailers that showcase what it is like to play on the Overcast Network servers:</p>
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/z5AAq1sxbKQ" frameborder="0" allowfullscreen></iframe>
+      <p>Video created by community member <a href="https://oc.tc/thegoodguy" target="_blank">thegoodguy</a>.</p>
+      <iframe width="560" height="315" src="http://www.youtube.com/embed/yIzotg_6g2Q" frameborder="0" allowfullscreen></iframe>
+      <p>Video created by community member <a href="https://oc.tc/CacklingPanda" target="_blank">CacklingPanda</a>.</p>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
   </body>
 </html>
